@@ -7,6 +7,9 @@ export NUM_WORKERS_EMAIL=${NUM_WORKERS_EMAIL:-${WORKERS:-5}}
 export NUM_WORKERS_UPDATE=${NUM_WORKERS_UPDATE:-${WORKERS:-1}}
 export NUM_WORKERS_CACHE=${NUM_WORKERS_CACHE:-${WORKERS:-5}}
 
+# PHP-FPM must listen on TCP so the nginx container can reach it
+export PHP_LISTEN_FPM=true
+
 export MYSQL_HOST=${MYSQL_HOST:-db}
 export MYSQL_PORT=${MYSQL_PORT:-3306}
 export MYSQL_USER=${MYSQL_USER:-misp}

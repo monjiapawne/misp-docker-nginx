@@ -3,6 +3,6 @@ server {
     location ~ ^/status$ {
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
-        fastcgi_pass unix:/run/php/php-fpm-status.sock;
+        fastcgi_pass misp-core:9003;
     }
 }
